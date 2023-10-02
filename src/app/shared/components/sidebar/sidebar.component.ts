@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AppService } from 'src/app/services/app.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class SidebarComponent {
 
+  constructor(private appService: AppService) {}
+
+  closeSidebar = () => {
+    this.appService.handleCloseSidebar()
+  }
 }
